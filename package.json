@@ -1,5 +1,5 @@
 {
-  "name": "studio2",
+  "name": "trivia",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://itscodenation.github.io/trivia",
@@ -31,5 +31,7 @@
   ],
   "devDependencies": {
     "gh-pages": "^2.2.0"
-  }
+  },
+  "keywords": [],
+  "description": "Kinda like Kahoot"
 }
