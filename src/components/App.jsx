@@ -15,11 +15,16 @@ function App() {
 }
 
 function Question(props) {
-  return <p>{props.question.text}</p>;
+  return <div>{props.question.text}</div>;
+  <Answer answers={data[questionNum].question} />;
 }
 
 function NextQuestion() {
   return <button>NextQuestion</button>;
+}
+
+function Answer(props) {
+  return <div>{props.answers.choices}</div>;
 }
 
 export default App;
