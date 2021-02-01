@@ -1,29 +1,25 @@
 import React, { Component, useState } from "react";
 import "../css/App.css";
 import data from "../sample_data.json";
-import Question from "./Question";
 
-let currentQ = 0;
-
-function App() {
-  return <div className="app">Trivia!</div>;
-  //here i think//
-}
-
-import Question from "./Question";
-
-let currentQ = 0;
+let questionNum = 0;
 
 function App() {
-  return <div className="app">Trivia!</div>;
-
-  // render (
-  //   <div className="App">
-  //     <div className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <h2>React Quiz</h2>
-  //     </div>
-  //     <Question content= `question.text`/>
-  //   </div>
-  // );
+  return (
+    <div className="app">
+      <h1>Trivia!</h1>
+      <Question question={data[questionNum].question} />
+      <NextQuestion />
+    </div>
+  );
 }
+
+function Question(props) {
+  return <p>{props.question.text}</p>;
+}
+
+function NextQuestion() {
+  return <button>NextQuestion</button>;
+}
+
+export default App;
