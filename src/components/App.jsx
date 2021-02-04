@@ -28,6 +28,11 @@ function CorrectAnswer(props) {
     <button onClick={() => setIsAnswered(true)}>
       Click for correct answer
     </button>
+
+    // {(setIsAnswered === true)
+    //   ? <div>{props.correct}</div> I tried
+    //   : <div> </div>
+    //   }
   );
 }
 
