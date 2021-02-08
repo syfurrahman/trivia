@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import "../css/App.css";
 import data from "../sample_data.json";
 let questionNum = 0;
+let answerIndex = data[questionNum].question.correct_choice_index;
 function App() {
   return (
     <div className="app">
@@ -9,7 +10,10 @@ function App() {
       <Question question={data[questionNum].question} />
       <Answer answers={data[questionNum].question} />
       <NextQuestion />
-      <CorrectAnswer />
+      <CorrectAnswer
+        correct={[data[questionNum].question]}
+        index={answerIndex}
+      />
     </div>
   );
 }
@@ -25,14 +29,17 @@ function NextQuestion() {
 function CorrectAnswer(props) {
   let [isAnswered, setisAnswered] = useState(false);
   return (
-    <button onClick={() => setIsAnswered(true)}>
+    <button
+      onClick={() =>
+        setisAnswered(true)(isAnswered === true) ? (
+          <div>{props.correct.choices[props.index]}</div>
+        ) : (
+          <div>Question hasn't been answered.</div>
+        )
+      }
+    >
       Click for correct answer
     </button>
-
-    // {(setIsAnswered === true)
-    //   ? <div>{props.correct}</div> I tried
-    //   : <div> </div>
-    //   }
   );
 }
 

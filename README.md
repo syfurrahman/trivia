@@ -37,7 +37,7 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 - [ ] Add props to `<Answer />` with the text "Answer goes here".
   - [ ] Pass props for the answer choices into `<Question />`.
   - [ ] Use those props to render the Answer components inside `<Question />` to display the answer choices.
-- [ ] Refactor to use map to map over all answer choices.
+- [ ] Refactor to use map to map over all answer choices. 
 
 > ![Day 2.0 goal](https://i.imgur.com/VpA8eRc.png)
 
