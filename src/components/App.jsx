@@ -28,19 +28,23 @@ function NextQuestion() {
 
 function CorrectAnswer(props) {
   let [isAnswered, setisAnswered] = useState(false);
-  return (
+  return ( <div>
     <button
-      onClick={() =>
-        setisAnswered(true)(isAnswered === true) ? (
-          <div>{props.correct.choices[props.index]}</div>
-        ) : (
-          <div>Question hasn't been answered.</div>
-        )
-      }
+      onClick={() => {
+        setisAnswered(true);
+        
+      }}
     >
       Click for correct answer
     </button>
   );
+  {isAnswered === true ? (
+          <div>{props.correct.choices[props.index]}</div>
+        ) : (
+          <div>Question hasn't been answered.</div>
+        );
+
+  </div>}
 }
 
 function Answer(props) {
