@@ -10,10 +10,7 @@ function App() {
       <Question question={data[questionNum].question} />
       <Answer answers={data[questionNum].question} />
       <NextQuestion />
-      <CorrectAnswer
-        correct={[data[questionNum].question]}
-        index={answerIndex}
-      />
+      <CorrectAnswer correct={data[questionNum].question} />
     </div>
   );
 }
@@ -28,23 +25,16 @@ function NextQuestion() {
 
 function CorrectAnswer(props) {
   let [isAnswered, setisAnswered] = useState(false);
-  return ( <div>
-    <button
-      onClick={() => {
-        setisAnswered(true);
-        
-      }}
-    >
-      Click for correct answer
-    </button>
+  return (
+    <div>
+      <button onClick={() => setisAnswered(true)}>
+        Click for correct answer
+      </button>
+      {isAnswered ? (
+        <div class="correctAnswer">{props.correct.choices[answerIndex]}</div>
+      ) : null}
+    </div>
   );
-  {isAnswered === true ? (
-          <div>{props.correct.choices[props.index]}</div>
-        ) : (
-          <div>Question hasn't been answered.</div>
-        );
-
-  </div>}
 }
 
 function Answer(props) {
