@@ -20,7 +20,13 @@ function Question(props) {
 }
 
 function NextQuestion() {
-  return <button>Next Question</button>;
+  let [qNum, setqNum] = useState(0);
+  return (
+    <div>
+      <button onClick={() => setqNum(1)}>Next Question</button>;
+      {qNum === 1 ? (questionNum = 1) : null:}
+    </div>
+  );
 }
 
 function CorrectAnswer(props) {
